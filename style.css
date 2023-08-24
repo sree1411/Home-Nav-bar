@@ -1,64 +1,57 @@
-*{
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  background-color: #f0f0f0;
 }
 
 
-.menu-bar{
-    background-color: yellow;
+h1{
+    text-align: center;
+    top:10px;
+}
+
+.faq-container {
+    max-width: 600px;
+    margin:0 auto;
+}
+.faq {
+    border: 2px solid blue;
+    margin:10px;
+    padding: 10px;
+    position: relative;
+}
+.faq-title{
+    text-align: center;
+    color:red
+}
+.faq-text{
+    color:green;
+    display: none;
     text-align: center;
 }
-.menu-bar ul {
-    display: inline-flex;
-    
-}
-.menu-bar ul li {
-    list-style: none;
-    margin: 20px;
-    width: 111px;
-}
-.menu-bar ul li a {
-    text-decoration: none;
-    font-size: 25px;
-    color:red;
+.faq-toggle {
+    top:10px;
+    right:10px;
+    position: absolute;
 }
 
-.active, .menu-bar ul li:hover {
-    background-color: white;
-    border-radius: 3px;
-}
-
-
-.sub-menu-2{
+.faq-toggle .fa-times{
     display: none;
 }
 
-.menu-bar ul li:hover .sub-menu-2{
-    display: block;
-    position: absolute;
-    margin-top: -1px;
-    margin-left: -12px;
-    background-color: yellow;
-}
-
-.menu-bar ul li:hover .sub-menu-2 ul{
+.faq.active .faq-toggle .fa-times{
     display: block;
 }
 
-.menu-bar ul li:hover .sub-menu-2 ul li{
-    background-color: white;
-    border: 2px;
-    margin-left: -20px;
-}
-
-.sub-menu-3{
+.faq.active .faq-toggle .fa-chevron-down {
     display: none;
-}
-.hover-me:hover .sub-menu-3{
+  }
+
+  .faq.active .faq-text{
     display: block;
-    position: absolute;
-    margin-top: -30px;
-    margin-left: 112px;
-    background-color: yellow;
-}
+  }
