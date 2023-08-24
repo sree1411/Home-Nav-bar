@@ -1,57 +1,104 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Muli', sans-serif;
-  background-color: #f0f0f0;
+body{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: linear-gradient(to bottom, 
+    yellow 0%, yellow 50%, blue 50%, blue 100%);
+}
+
+nav {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    padding: 20px;
+     overflow-x: hidden;
+    transition: width 0.6s linear;
+}
+
+nav.active{
+    width: 350px;
 }
 
 
-h1{
-    text-align: center;
-    top:10px;
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    transition: width 0.6s linear
+
 }
 
-.faq-container {
-    max-width: 600px;
-    margin:0 auto;
+nav.active ul{
+    width: 100%;
 }
-.faq {
-    border: 2px solid blue;
-    margin:10px;
-    padding: 10px;
+
+nav ul li {
+   transform: rotateY(0deg);
+   opacity: 0;
+   transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+nav.active ul li{
+    transform: rotateY(360deg);
+    opacity: 1;
+    /* transition: transform 0.6s linear */
+}
+
+
+nav ul a {
     position: relative;
-}
-.faq-title{
-    text-align: center;
-    color:red
-}
-.faq-text{
-    color:green;
-    display: none;
-    text-align: center;
-}
-.faq-toggle {
-    top:10px;
-    right:10px;
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+
+  .icon {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    height: 30px;
+    width: 30px;
+  }
+
+
+.icon .line {
+    height: 2px;
+    width: 20px;
+    background-color: blue;
     position: absolute;
+    top:10px;
+    left: 5px;
+    transition: transform 0.6s linear;
 }
 
-.faq-toggle .fa-times{
-    display: none;
+
+.icon .line2{
+    top:auto;
+    bottom:10px;
 }
 
-.faq.active .faq-toggle .fa-times{
-    display: block;
+
+
+nav.active .icon .line1{
+    transform: rotate(-765deg) translate(-3.5px);
 }
 
-.faq.active .faq-toggle .fa-chevron-down {
-    display: none;
-  }
-
-  .faq.active .faq-text{
-    display: block;
-  }
+nav.active .icon .line2{
+    transform: rotate(765deg) translate(-3.5px);
+}
